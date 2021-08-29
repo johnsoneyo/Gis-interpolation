@@ -1,6 +1,9 @@
 # NavvisTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+This is an angular test to demonstrate spatial interpolation using inverse distance weight method 
+
+## Install Dependencies 
+Run `npm install`
 
 ## Development server
 

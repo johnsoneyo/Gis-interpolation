@@ -15,12 +15,13 @@ import {Idw} from "./idw";
 export class AppComponent implements OnInit {
   title = 'Navvis Test';
   csvData?: string;
+  originalCsvData?: string;
 
   constructor() {
   }
 
   async updateTextArea(data: any) {
-    this.csvData = data;
+    this.originalCsvData = data;
     let textLines = this.splitCSVLines(data);
     let updateLines: string[] = [];
     let coordinates = [];
@@ -28,11 +29,11 @@ export class AppComponent implements OnInit {
 
     for (var x = 0; x < textLines.length; x++) {
 
-      if (textLines[x].split('\\s+').length> 1) {
-        splitStyle.push('comma');
+      if (textLines[x].split('\\s+').length > 1) {
+        splitStyle.push('space');
       }
       if (textLines[x].split(',').length > 1) {
-        splitStyle.push('space');
+        splitStyle.push('comma');
       }
 
       let values: number[] = textLines[x].split(/[ ,]+/).filter((space) => space.length > 0)
@@ -60,7 +61,7 @@ export class AppComponent implements OnInit {
           values[y] = Math.round(computedValue * 10) / 10
         }
       }
-      const split = splitStyle[x]=== 'comma'? ',' : ' ';
+      const split = splitStyle[x] === 'comma' ? ',' : ' ';
       updateLines.push(values.join(split));
     }
     this.csvData = await updateLines.join('\n');

@@ -18,6 +18,9 @@
         <app-fileupload (textAreaDisplayEvent)="updateTextArea($event)"></app-fileupload>
     </div>
     <div  class="col-lg-12 pt-3 px-md-0 px-sm-2">
+      <textarea  [(ngModel)]="originalCsvData" class="form-control" type="text" ></textarea>
+    </div>
+    <div  class="col-lg-12 pt-3 px-md-0 px-sm-2">
       <textarea  [(ngModel)]="csvData" class="form-control" type="text" ></textarea>
     </div>
 
