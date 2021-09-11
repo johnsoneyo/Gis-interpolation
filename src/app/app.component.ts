@@ -13,7 +13,7 @@ import {Idw} from "./idw";
  * compute = sigma (weight * point_value)/ sigma(weight)
  */
 export class AppComponent implements OnInit {
-  title = 'Navvis Test';
+  title = 'GIS Interpolation Test';
   csvData?: string;
   originalCsvData?: string;
 
