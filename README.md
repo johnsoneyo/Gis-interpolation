@@ -1,4 +1,4 @@
-# NavvisTest
+# GisInterpolation Test
 
 This is an angular test to demonstrate spatial interpolation using inverse distance weight method 
 
